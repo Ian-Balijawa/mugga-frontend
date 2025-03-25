@@ -25,18 +25,18 @@ const data = {
 		{
 			title: "System",
 			url: "/admin/posts",
-			icon: NewspaperIcon, // Replace with an appropriate icon
+			icon: NewspaperIcon,
 			items: [
 				{
 					title: "View All Postings",
 					url: "/admin/posts",
 				},
 				{
-					title: "Coaches",
+					title: "Staff",
 					url: "/admin/coaches",
 				},
 				{
-					title: "Programs",
+					title: "Services & Packages",
 					url: "/admin/programs",
 				},
 				{
@@ -50,17 +50,6 @@ const data = {
 				{
 					title: "Alumni",
 					url: "/admin/alumni",
-				},
-			],
-		},
-		{
-			title: "Registrations",
-			url: "#",
-			icon: Users, // Replace with an appropriate icon
-			items: [
-				{
-					title: "View Users",
-					url: "/admin/registrations",
 				},
 			],
 		},

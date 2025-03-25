@@ -8,7 +8,6 @@ import {
 	Image,
 	Building2,
 	Dumbbell,
-	ClipboardList,
 	LogOut,
 	Menu,
 	X,
@@ -19,16 +18,11 @@ import { useState, useEffect } from "react";
 const navItems = [
 	{ href: "/admin", label: "Dashboard", icon: <LayoutDashboard className="h-4 w-4" /> },
 	{ href: "/admin/posts", label: "Posts", icon: <FileText className="h-4 w-4" /> },
-	{ href: "/admin/coaches", label: "Coaches", icon: <Users className="h-4 w-4" /> },
+	{ href: "/admin/coaches", label: "Staff", icon: <Users className="h-4 w-4" /> },
 	{ href: "/admin/gallery", label: "Gallery", icon: <Image className="h-4 w-4" /> },
 	{ href: "/admin/facilities", label: "Facilities", icon: <Building2 className="h-4 w-4" /> },
-	{ href: "/admin/programs", label: "Programs", icon: <Dumbbell className="h-4 w-4" /> },
+	{ href: "/admin/programs", label: "Services", icon: <Dumbbell className="h-4 w-4" /> },
 	{ href: "/admin/alumni", label: "Alumni", icon: <Users className="h-4 w-4" /> },
-	{
-		href: "/admin/registrations",
-		label: "Registrations",
-		icon: <ClipboardList className="h-4 w-4" />,
-	},
 ];
 
 export function Sidebar() {

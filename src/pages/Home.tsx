@@ -273,7 +273,7 @@ const HomePage = () => {
 							<Star className="mx-auto h-8 w-8 text-primary-400" />
 							<div className="mt-4">
 								<p className="text-3xl font-bold">10+</p>
-								<p className="text-sm text-white/80">Years Experience</p>
+								<p className="text-sm text-white/80">Years In Service</p>
 							</div>
 						</motion.div>
 					</div>

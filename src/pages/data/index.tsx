@@ -110,19 +110,19 @@ export const values = [
 export const heroSlides = [
 	{
 		id: 1,
-		image: "https://example.com/images/gorilla-safari.jpg",
+		image: "https://tiotours.travel/uploads/0000/94/2024/10/04/whatsapp-image-2024-10-03-at-161223-84a31c96.jpg",
 		title: "Explore Uganda’s Breathtaking Wildlife",
 		subtitle: "Join us on an unforgettable safari experience across Uganda’s national parks.",
 	},
 	{
 		id: 2,
-		image: "https://example.com/images/source-of-the-nile.jpg",
+		image: "https://www.pamojatoursandtravel.com/wp-content/uploads/2024/10/Boat-Cruise-nile.jpg",
 		title: "Adventurous Nile River Excursions",
 		subtitle: "Experience white-water rafting, boat cruises, and stunning Nile views.",
 	},
 	{
 		id: 3,
-		image: "https://example.com/images/rwenzori-hiking.jpg",
+		image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ugandabudgetsafaris.com%2Fblog%2Fwhat-to-see-in-mountain-rwenzori%2F&psig=AOvVaw3SqGY2wPVg-KY39bLTOSIn&ust=1743004175063000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjYrNfKpYwDFQAAAAAdAAAAABAE",
 		title: "Conquer the Rwenzori Mountains",
 		subtitle: "Hike Africa’s third-highest mountain for an epic adventure.",
 	},
@@ -132,31 +132,31 @@ export const partners = [
 	{
 		id: 1,
 		name: "Uganda Wildlife Authority",
-		logo: "/images/partners/uwa.jpg",
+		logo: "https://chitra-production.s3.eu-west-2.amazonaws.com/production/images/4d7/c92682e3-1662-47f3-ba28-6279b44c74d7/de4/f4b67982-ada0-4e30-92cb-e872d5265de4/UWA-LOGO.jpg",
 		description: "Conserving and managing Uganda’s wildlife and protected areas.",
 	},
 	{
 		id: 2,
 		name: "Uganda Tourism Board",
-		logo: "/images/partners/utb.jpg",
+		logo: "https://qasystem.utb.go.ug/qas/web-files/images/home/utb_logo.jpg",
 		description: "Promoting Uganda as a leading tourism destination.",
 	},
 	{
 		id: 3,
 		name: "Association of Uganda Tour Operators",
-		logo: "/images/partners/autou.jpg",
+		logo: "/ato.png",
 		description: "Professional body representing leading tour operators in Uganda.",
 	},
 	{
 		id: 4,
 		name: "Uganda Airlines",
-		logo: "/images/partners/uganda-airlines.jpg",
+		logo: "https://seeklogo.com/images/U/uganda-airlines-logo-52A324A5FA-seeklogo.com.png",
 		description: "Connecting Uganda to the world with comfortable travel experiences.",
 	},
 	{
 		id: 5,
 		name: "Serena Hotels & Lodges",
-		logo: "/images/partners/serena.jpg",
+		logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjl7hHPrBXIQojCX_ZEfvJSJAorFYsTqVi3w&s",
 		description: "Offering luxury accommodations across Uganda’s top destinations.",
 	},
 ];
