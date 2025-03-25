@@ -96,7 +96,7 @@ export default function App() {
 				<AppProvider>
 					<Toaster />
 					<RouterProvider router={router} />
-					<WhatsAppChat phoneNumber="256787444814" />
+					<WhatsAppChat phoneNumber="250784528843" />
 				</AppProvider>
 			</QueryClientProvider>
 		</AuthProvider>
