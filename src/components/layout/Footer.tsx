@@ -16,7 +16,7 @@ const socialLinks = [
 	},
 	{
 		name: "Instagram",
-		url: "https://www.instagram.com/arenasportsacademyug/profilecard/?igsh=ZDZmcHZpdmkwcGJy",
+		url: "https://www.instagram.com/tours-travel/profilecard/?igsh=ZDZmcHZpdmkwcGJy",
 		icon: <FaInstagram className="h-5 w-5" />,
 		hoverClass: "hover:bg-[#E4405F]",
 	},
@@ -28,13 +28,13 @@ const socialLinks = [
 	},
 	{
 		name: "YouTube",
-		url: "https://youtube.com/@arenasportsacademy5067?si=BIFHIuvyN1bJScMN",
+		url: "https://youtube.com/@tours-travel5067?si=BIFHIuvyN1bJScMN",
 		icon: <FaYoutube className="h-5 w-5" />,
 		hoverClass: "hover:bg-[#FF0000]",
 	},
 	{
 		name: "PayPal",
-		url: "https://www.paypal.me/NSAMBAEDWARD",
+		url: "https://www.paypal.me/tours-travel",
 		icon: <FaPaypal className="h-5 w-5" />,
 		hoverClass: "hover:bg-[#00457C]",
 	},

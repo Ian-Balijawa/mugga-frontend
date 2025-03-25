@@ -61,7 +61,7 @@ export function Donations() {
 								</p>
 								<Button asChild className="w-full" variant="outline">
 									<a
-										href="https://www.paypal.me/NSAMBAEDWARD"
+										href="https://www.paypal.me/tours-travel"
 										target="_blank"
 										rel="noopener noreferrer"
 										className="flex items-center justify-center gap-2"
