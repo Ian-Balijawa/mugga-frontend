@@ -153,8 +153,8 @@ const HomePage = () => {
 						</p>
 						<div className="flex flex-wrap gap-4">
 							<Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-								<Link to="/book-tour">
-									Book a Tour
+								<Link to="/gallery">
+									View Gallery
 									<ArrowRight className="ml-2 h-4 w-4" />
 								</Link>
 							</Button>
@@ -164,7 +164,7 @@ const HomePage = () => {
 								variant="outline"
 								className="bg-white/10 border-white/20 hover:bg-white/20 text-white"
 							>
-								<Link to="/destinations">Explore Destinations</Link>
+								<Link to="/programs">Explore Services</Link>
 							</Button>
 						</div>
 					</motion.div>
