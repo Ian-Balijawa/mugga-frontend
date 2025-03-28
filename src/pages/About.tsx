@@ -46,7 +46,7 @@ export function About() {
 					</motion.div>
 
 					<PDFVieweR
-						title="Arena Sports Academy - Company Profile"
+						title="Mugga Tours - Company Profile"
 						pdfUrl="/documents/company-profile.pdf"
 					/>
 				</div>
