@@ -96,7 +96,7 @@ export function AlumniForm({ alumni, onSuccess }: AlumniFormProps) {
 
 			<div className="grid grid-cols-2 gap-4">
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Current Team</label>
+					<label className="text-sm font-medium">Destination</label>
 					<Input
 						value={formData.currentTeam}
 						onChange={(e) =>
@@ -105,7 +105,7 @@ export function AlumniForm({ alumni, onSuccess }: AlumniFormProps) {
 					/>
 				</div>
 				<div className="space-y-2">
-					<label className="text-sm font-medium">Graduation Year</label>
+					<label className="text-sm font-medium">Date</label>
 					<Input
 						type="number"
 						value={formData.graduationYear}
@@ -143,13 +143,13 @@ export function AlumniForm({ alumni, onSuccess }: AlumniFormProps) {
 			</div>
 
 			<div className="space-y-2">
-				<label className="text-sm font-medium">Achievements (comma-separated)</label>
+				<label className="text-sm font-medium">Descriptions (comma-separated)</label>
 				<Textarea
 					value={formData.achievements}
 					onChange={(e) =>
 						setFormData((prev) => ({ ...prev, achievements: e.target.value }))
 					}
-					placeholder="Achievements (comma-separated)"
+					placeholder="Descriptions (comma-separated)"
 				/>
 			</div>
 

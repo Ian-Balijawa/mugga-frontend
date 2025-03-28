@@ -149,10 +149,10 @@ export function AlumniNetwork() {
 								<TableHead>Image</TableHead>
 								<TableHead>Name</TableHead>
 								<TableHead>Position</TableHead>
-								<TableHead>Current Team</TableHead>
-								<TableHead>Graduation Year</TableHead>
+								<TableHead>Destination</TableHead>
+								<TableHead>Date</TableHead>
 								<TableHead>Category</TableHead>
-								<TableHead>Achievements</TableHead>
+								<TableHead>Descriptions</TableHead>
 								<TableHead>Created At</TableHead>
 								<TableHead>Updated At</TableHead>
 								<TableHead className="w-[100px]">Actions</TableHead>
