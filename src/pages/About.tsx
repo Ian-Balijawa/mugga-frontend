@@ -4,6 +4,7 @@ import { Target } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/services/api";
 import { coreValues } from "@/pages/data";
+import { PDFVieweR } from "@/components/pdf-viewer";
 
 export function About() {
 	const { data: coaches = [] } = useQuery({
@@ -25,6 +26,29 @@ export function About() {
 					>
 						<h1 className="text-5xl font-bold mb-6">About Us</h1>
 					</motion.div>
+				</div>
+			</section>
+
+			{/* Company Profile Section */}
+			<section className="py-16 bg-white">
+				<div className="container">
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.6 }}
+						className="text-center mb-12"
+					>
+						<h2 className="text-3xl font-bold">Company Profile</h2>
+						<p className="mt-4 text-lg text-muted-foreground">
+							Download or read through our detailed company profile
+						</p>
+					</motion.div>
+
+					<PDFVieweR
+						title="Arena Sports Academy - Company Profile"
+						pdfUrl="/documents/company-profile.pdf"
+					/>
 				</div>
 			</section>
 

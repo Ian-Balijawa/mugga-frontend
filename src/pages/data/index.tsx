@@ -22,7 +22,7 @@ export const contactInfo = [
 	},
 	{
 		title: "Email",
-		value: "info@ugandaadventuretours.com",
+		value: "info@muggatours.com",
 		icon: <Mail className="h-5 w-5 text-primary-600" />,
 	},
 	{
