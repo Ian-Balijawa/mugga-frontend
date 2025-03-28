@@ -20,7 +20,8 @@ const navItems = [
 	{ href: "/admin/posts", label: "Posts", icon: <FileText className="h-4 w-4" /> },
 	{ href: "/admin/coaches", label: "Staff", icon: <Users className="h-4 w-4" /> },
 	{ href: "/admin/gallery", label: "Gallery", icon: <Image className="h-4 w-4" /> },
-	{ href: "/admin/facilities", label: "Facilities", icon: <Building2 className="h-4 w-4" /> },
+	{ href: "/admin/alumni", label: "Testimonials", icon: <Image className="h-4 w-4" /> },
+	{ href: "/admin/facilities", label: "Stays", icon: <Building2 className="h-4 w-4" /> },
 	{ href: "/admin/programs", label: "Services", icon: <Dumbbell className="h-4 w-4" /> },
 	{ href: "/admin/alumni", label: "Alumni", icon: <Users className="h-4 w-4" /> },
 ];

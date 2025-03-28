@@ -90,7 +90,7 @@ export function Registration() {
 			}),
 		onSuccess: () => {
 			toast.success("Registration Successful!", {
-				description: "Thank you for registering with Tours Travel.",
+				description: "Thank you for registering withMugga Tours  .",
 			});
 			// Redirect after a short delay
 			setTimeout(() => {
@@ -453,9 +453,8 @@ function ReviewSubmit({
 							Consent and Authorization
 						</Label>
 						<p className="text-sm text-muted-foreground">
-							I hereby consent and authorize Tours Travel to collect, process, and
-							store the provided information for registration and program-related
-							purposes.
+							I hereby consent and authorizeMugga Tours to collect, process, and store
+							the provided information for registration and program-related purposes.
 						</p>
 						<p className="text-sm text-muted-foreground mt-2">
 							By checking this box, I confirm that all information provided is

@@ -69,13 +69,13 @@ export function Footer() {
 					<div className="space-y-4">
 						<div className="flex items-center gap-2">
 							<div className="h-8 w-8 rounded-full bg-primary-700">
-								<Image src="/logo.png" alt="Tours Travel" className="h-8 w-8" />
+								<Image src="/logo.png" alt="Mugga Tours " className="h-8 w-8" />
 							</div>
-							<h3 className="text-lg font-bold">Tours Travel</h3>
+							<h3 className="text-lg font-bold">Mugga Tours </h3>
 						</div>
 						<p className="text-sm text-white/80">
 							Discover breathtaking destinations and unforgettable travel experiences
-							with Tours Travel. Since 2014, we've been helping travelers explore the
+							withMugga Tours . Since 2022, we've been helping travelers explore the
 							world with seamless and well-planned journeys.
 						</p>
 						<div className="flex flex-wrap gap-4">
@@ -100,29 +100,11 @@ export function Footer() {
 						<ul className="space-y-3">
 							<li>
 								<Link
-									to="/destinations"
+									to="/programs"
 									className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
 								>
 									<ArrowRight className="h-4 w-4" />
-									Destinations
-								</Link>
-							</li>
-							<li>
-								<Link
-									to="/packages"
-									className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
-								>
-									<ArrowRight className="h-4 w-4" />
-									Packages
-								</Link>
-							</li>
-							<li>
-								<Link
-									to="/travel-guides"
-									className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
-								>
-									<ArrowRight className="h-4 w-4" />
-									Travel Guides
+									Services
 								</Link>
 							</li>
 							<li>
@@ -134,6 +116,24 @@ export function Footer() {
 									About Us
 								</Link>
 							</li>
+							<li>
+								<Link
+									to="/news"
+									className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
+								>
+									<ArrowRight className="h-4 w-4" />
+									News/Blogs
+								</Link>
+							</li>
+							<li>
+								<Link
+									to="/testimonials"
+									className="flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
+								>
+									<ArrowRight className="h-4 w-4" />
+									Testimonials
+								</Link>
+							</li>
 						</ul>
 					</div>
 
@@ -143,14 +143,11 @@ export function Footer() {
 						<ul className="space-y-3">
 							<li className="flex items-start gap-3 text-sm text-white/80">
 								<MapPin className="mt-1 h-4 w-4 shrink-0" />
-								<span>
-									Tours Travel, Bunamwaya, Ngobe, Near Hass Petrol Station, Shop
-									No: Doo3
-								</span>
+								<span>Mugga Tours , Mabirizi Complex, Kampala Rd.</span>
 							</li>
 							<li className="flex items-center gap-3 text-sm text-white/80">
 								<Phone className="h-4 w-4 shrink-0" />
-								<span>+256 701102346 / +256 746971205</span>
+								<span>+256 704709812</span>
 							</li>
 							<li className="flex items-center gap-3 text-sm text-white/80">
 								<Mail className="h-4 w-4 shrink-0" />
@@ -194,13 +191,13 @@ export function Footer() {
 				<div className="border-t border-white/10 py-6">
 					<div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row">
 						<p className="text-sm text-white/60">
-							© {new Date().getFullYear()} Tours Travel. All rights reserved.
+							© {new Date().getFullYear()}Mugga Tours . All rights reserved.
 						</p>
 					</div>
 				</div>
 
 				<div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-					<p>© {new Date().getFullYear()} Tours Travel. All rights reserved.</p>
+					<p>© {new Date().getFullYear()}Mugga Tours . All rights reserved.</p>
 					<p className="mt-2">
 						Developed by{" "}
 						<a

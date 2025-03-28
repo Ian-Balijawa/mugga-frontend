@@ -192,7 +192,7 @@ const HomePage = () => {
 								) : (
 									<p className="text-3xl font-bold">{registrations.length}+</p>
 								)}
-								<p className="text-sm text-white/80">Travel Destinations</p>
+								<p className="text-sm text-white/80">Travel Services</p>
 							</div>
 						</motion.div>
 
@@ -272,7 +272,7 @@ const HomePage = () => {
 						>
 							<Star className="mx-auto h-8 w-8 text-primary-400" />
 							<div className="mt-4">
-								<p className="text-3xl font-bold">10+</p>
+								<p className="text-3xl font-bold">3+</p>
 								<p className="text-sm text-white/80">Years In Service</p>
 							</div>
 						</motion.div>
@@ -293,7 +293,7 @@ const HomePage = () => {
 						<div>
 							<h2 className="text-3xl font-bold lg:text-4xl">About Tours & Travel</h2>
 							<p className="mt-4 text-lg text-muted-foreground">
-								Founded in 2014, Tours & Travel has grown from offering small local
+								Founded in 2022, Tours & Travel has grown from offering small local
 								trips to organizing worldwide adventures for thousands of travelers.
 								We are dedicated to providing unforgettable travel experiences while
 								ensuring safety, comfort, and cultural immersion.

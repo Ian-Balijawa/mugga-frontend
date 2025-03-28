@@ -70,7 +70,7 @@ export function Gallery() {
 							<SelectItem value="all">All Categories</SelectItem>
 							<SelectItem value="events">Events</SelectItem>
 							<SelectItem value="facilities">Facilities</SelectItem>
-							<SelectItem value="training">Training</SelectItem>
+							<SelectItem value="activity">Activity</SelectItem>
 							<SelectItem value="competitions">Competitions</SelectItem>
 						</SelectContent>
 					</Select>

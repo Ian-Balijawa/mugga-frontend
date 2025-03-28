@@ -13,7 +13,7 @@ const navItems = [
 		isLogo: true,
 	},
 	{ href: "/about", label: "About" },
-	{ href: "/programs", label: "Destinations" },
+	{ href: "/programs", label: "Services" },
 	{ href: "/coaches", label: "Staff" },
 	{ href: "/facilities", label: "Facilities" },
 	{ href: "/news", label: "News" },
@@ -59,7 +59,7 @@ export function MobileNav() {
 										<>
 											<img
 												src="/images/logo.png"
-												alt="Tours Travel"
+												alt="Mugga Tours "
 												className="h-8 w-auto"
 											/>
 											{item.label}

@@ -96,12 +96,12 @@ const faqItems: FAQItem[] = [
 		answer: "While travel insurance is not mandatory, we strongly recommend it to ensure a stress-free trip and coverage for unforeseen circumstances.",
 	},
 	{
-		category: "Destinations & Accommodations",
+		category: "Services & Accommodations",
 		question: "What accommodations are included in the tour packages?",
 		answer: "We include a range of accommodations depending on the tour package, including hotels, resorts, and eco-lodges. You can choose to upgrade to premium options for an additional cost.",
 	},
 	{
-		category: "Destinations & Accommodations",
+		category: "Services & Accommodations",
 		question: "Can I customize my destination?",
 		answer: "Yes, we offer customized tours where you can choose your desired destinations, accommodations, and activities. Our travel experts will help plan your perfect trip.",
 	},

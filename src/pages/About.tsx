@@ -108,7 +108,7 @@ export function About() {
 									<h2 className="text-3xl font-bold">About Us</h2>
 								</div>
 								<p className="text-lg text-muted-foreground leading-relaxed">
-									Established in 2010, Tours Travel has rapidly grown into one of
+									Established in 2022,Mugga Tours has rapidly grown into one of
 									the most trusted travel agencies in the region. With a
 									commitment to providing unforgettable travel experiences, we
 									offer personalized itineraries, expert advice, and seamless

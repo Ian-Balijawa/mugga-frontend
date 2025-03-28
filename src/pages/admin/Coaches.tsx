@@ -27,15 +27,15 @@ import { CoachResponseDto } from "@/types/dtos";
 export function Coaches() {
 	const [search, setSearch] = useState("");
 	const [filter, setFilter] = useState("all");
-	const [selectedCoach, setSelectedCoach] = useState<CoachResponseDto | null>(null);
+	const [selectedStaff, setSelectedStaff] = useState<CoachResponseDto | null>(null);
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 	const {
-		data: coaches = [],
+		data: staff = [],
 		refetch,
 		isLoading,
 	} = useQuery({
-		queryKey: ["admin", "coaches"],
+		queryKey: ["admin", "staff"],
 		queryFn: api.getCoaches,
 	});
 
@@ -52,15 +52,15 @@ export function Coaches() {
 		}
 	};
 
-	const filteredCoaches = coaches.filter((coach) => {
-		const matchesSearch = coach.name.toLowerCase().includes(search.toLowerCase());
+	const filteredStaff = staff.filter((staff) => {
+		const matchesSearch = staff.name.toLowerCase().includes(search.toLowerCase());
 		const matchesFilter =
 			filter === "all" ||
-			(filter === "coaches" && coach.role.toLowerCase().includes("coach")) ||
-			(filter === "staff" && coach.role.toLowerCase().includes("staff")) ||
+			(filter === "tour guide" && staff.role.toLowerCase().includes("tour guide")) ||
+			(filter === "tour operator" && staff.role.toLowerCase().includes("tour operator")) ||
 			(filter === "other" &&
-				!coach.role.toLowerCase().includes("coach") &&
-				!coach.role.toLowerCase().includes("staff"));
+				!staff.role.toLowerCase().includes("tour operator") &&
+				!staff.role.toLowerCase().includes("tour guide"));
 		return matchesSearch && matchesFilter;
 	});
 
@@ -71,19 +71,19 @@ export function Coaches() {
 					<div className="relative w-[300px]">
 						<Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
 						<Input
-							placeholder="Search coaches..."
+							placeholder="Search staff..."
 							value={search}
 							onChange={(e) => setSearch(e.target.value)}
 							className="pl-9"
 						/>
 					</div>
 					<div className="text-sm text-muted-foreground">
-						Total Coaches: {coaches.length}
+						Total Coaches: {staff.length}
 					</div>
 				</div>
 				<Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
 					<DialogTrigger asChild>
-						<Button onClick={() => setSelectedCoach(null)}>
+						<Button onClick={() => setSelectedStaff(null)}>
 							<Plus className="mr-2 h-4 w-4" />
 							Add Member
 						</Button>
@@ -91,14 +91,14 @@ export function Coaches() {
 					<DialogContent className="sm:max-w-[600px]">
 						<DialogHeader>
 							<DialogTitle>
-								{selectedCoach ? "Edit Team Member" : "Add Team Member"}
+								{selectedStaff ? "Edit Team Member" : "Add Team Member"}
 							</DialogTitle>
 						</DialogHeader>
 						<CoachForm
-							coach={selectedCoach}
+							coach={selectedStaff}
 							onSuccess={() => {
 								setIsDialogOpen(false);
-								setSelectedCoach(null);
+								setSelectedStaff(null);
 								refetch();
 							}}
 						/>
@@ -113,7 +113,7 @@ export function Coaches() {
 					</SelectTrigger>
 					<SelectContent>
 						<SelectItem value="all">All Members</SelectItem>
-						<SelectItem value="coaches">Coaches</SelectItem>
+						<SelectItem value="staff">Coaches</SelectItem>
 						<SelectItem value="staff">Staff</SelectItem>
 						<SelectItem value="other">Other</SelectItem>
 					</SelectContent>
@@ -136,14 +136,14 @@ export function Coaches() {
 				</div>
 			) : (
 				<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-					{filteredCoaches.map((coach) => (
-						<Card key={coach.id} className="overflow-hidden">
+					{filteredStaff.map((staff) => (
+						<Card key={staff.id} className="overflow-hidden">
 							<CardContent className="p-6">
 								<div className="flex flex-col items-center text-center">
 									<div className="relative mb-4">
 										<img
-											src={coach.imageUrl}
-											alt={coach.name}
+											src={staff.imageUrl}
+											alt={staff.name}
 											className="h-32 w-32 rounded-full object-cover"
 										/>
 										<div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
@@ -152,7 +152,7 @@ export function Coaches() {
 												size="icon"
 												className="h-8 w-8 rounded-full"
 												onClick={() => {
-													setSelectedCoach(coach);
+													setSelectedStaff(staff);
 													setIsDialogOpen(true);
 												}}
 											>
@@ -162,19 +162,19 @@ export function Coaches() {
 												variant="destructive"
 												size="icon"
 												className="h-8 w-8 rounded-full"
-												onClick={() => handleDelete(coach.id)}
+												onClick={() => handleDelete(staff.id)}
 											>
 												<Trash2 className="h-4 w-4" />
 											</Button>
 										</div>
 									</div>
-									<h3 className="text-lg font-semibold">{coach.name}</h3>
+									<h3 className="text-lg font-semibold">{staff.name}</h3>
 									<p className="text-sm text-muted-foreground mt-1">
-										{coach.role}
+										{staff.role}
 									</p>
-									{coach.specialties.length > 0 && (
+									{staff.specialties.length > 0 && (
 										<div className="flex flex-wrap gap-1 mt-3 justify-center">
-											{coach.specialties.map((specialty) => (
+											{staff.specialties.map((specialty) => (
 												<Badge
 													key={specialty}
 													variant="secondary"
@@ -186,7 +186,7 @@ export function Coaches() {
 										</div>
 									)}
 									<p className="mt-4 text-sm text-muted-foreground line-clamp-3">
-										{coach.bio}
+										{staff.bio}
 									</p>
 								</div>
 							</CardContent>
@@ -195,7 +195,7 @@ export function Coaches() {
 				</div>
 			)}
 
-			{filteredCoaches.length === 0 && !isLoading && (
+			{filteredStaff.length === 0 && !isLoading && (
 				<div className="text-center text-muted-foreground py-12">
 					No team members found matching your criteria.
 				</div>

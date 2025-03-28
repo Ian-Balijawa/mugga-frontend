@@ -16,7 +16,6 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "@/services/api";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import {
 	accommodationTypes,
 	additionalServices,
@@ -306,9 +305,9 @@ const ProgramsPage = () => {
 							</SelectTrigger>
 							<SelectContent>
 								<SelectItem value="all">All Categories</SelectItem>
-								<SelectItem value="training">Training</SelectItem>
-								<SelectItem value="camp">Camps</SelectItem>
-								<SelectItem value="clinic">Clinics</SelectItem>
+								<SelectItem value="activity">Activity</SelectItem>
+								<SelectItem value="services">Servicess</SelectItem>
+								<SelectItem value="destination">Destinations</SelectItem>
 							</SelectContent>
 						</Select>
 						<Input
@@ -359,10 +358,9 @@ const ProgramsPage = () => {
 												{program.price > 1 ? `${program.price}` : "Free"}
 											</span>
 										</div>
-										<Button asChild className="w-full" variant="outline">
+										<Button className="w-full" variant="outline">
 											<Link to={`/programs/${program.id}`}>
-												Read More
-												<ArrowRight className="ml-2 h-4 w-4" />
+												Read More and Book a Tour
 											</Link>
 										</Button>
 									</CardContent>

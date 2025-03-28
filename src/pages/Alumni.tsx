@@ -14,36 +14,6 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "@/services/api";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const testimonials = [
-	{
-		name: "Magala Charles",
-		role: "Former Academy player, now coach U14",
-		image: "/images/testimonials/Magala-Charles.jpg",
-		content:
-			"From being a player at the academy to now coaching the U14 team, I've experienced firsthand the exceptional development program at Tours Travel. I'm passionate about passing on the same values and skills that I learned here to the next generation.",
-		graduationYear: 2016,
-		currentTeam: "Tours Travel U14",
-	},
-	{
-		name: "Ssebatta Christiano Augus",
-		role: "Former Academy player, Now coach/CEO",
-		image: "/images/testimonials/Ssebatta-Christiano-Augus.jpg",
-		content:
-			"My journey from being an academy player to founding and leading SCASA Academy in Masaka has been remarkable. The leadership and coaching principles I learned at Tours Travel have been instrumental in shaping my vision for developing young talent.",
-		graduationYear: 2015,
-		currentTeam: "SCASA ACADEMY MASAKA",
-	},
-	{
-		name: "Collins Mayanja",
-		role: "Former Academy player, now trainer & coach U10",
-		image: "/images/testimonials/Collins-Mayanja.jpg",
-		content:
-			"From being a player at the academy to now training and coaching the U10 team, I've seen firsthand how Tours Travel shapes young talents. It's rewarding to be part of developing the next generation of players.",
-		graduationYear: 2017,
-		currentTeam: "Tours Travel U10",
-	},
-];
-
 export function AlumniNetwork() {
 	const [category, setCategory] = useState<string>("all");
 	const [search, setSearch] = useState("");
@@ -58,7 +28,7 @@ export function AlumniNetwork() {
 		refetch();
 	}, [refetch]);
 
-	const filteredAlumni = alumni.filter((alum) => {
+	const filteredTestimonial = alumni.filter((alum) => {
 		const matchesCategory = category === "all" || alum.category === category;
 		const matchesSearch =
 			alum.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -78,9 +48,9 @@ export function AlumniNetwork() {
 						transition={{ duration: 0.8 }}
 						className="max-w-3xl mx-auto text-center text-white"
 					>
-						<h1 className="text-5xl font-bold mb-6">Alumni Network</h1>
+						<h1 className="text-5xl font-bold mb-6">Testimonials Network</h1>
 						<p className="text-xl text-white/90">
-							Celebrating the success stories of our academy graduates
+							Celebrating the stories of our previous vistors
 						</p>
 					</motion.div>
 				</div>
@@ -103,55 +73,56 @@ export function AlumniNetwork() {
 					</motion.div>
 
 					<div className="grid gap-8 md:grid-cols-3">
-						{testimonials.map((testimonial, index) => (
-							<motion.div
-								key={testimonial.name}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-							>
-								<Card className="h-full">
-									<CardContent className="p-6">
-										<div className="flex items-start gap-4">
-											<Avatar className="h-12 w-12">
-												<AvatarImage
-													src={testimonial.image}
-													alt={testimonial.name}
-												/>
-												<AvatarFallback>
-													{testimonial.name
-														.split(" ")
-														.map((n) => n[0])
-														.join("")}
-												</AvatarFallback>
-											</Avatar>
-											<div>
-												<h3 className="font-semibold">
-													{testimonial.name}
-												</h3>
-												<p className="text-sm text-muted-foreground">
-													{testimonial.role}
-												</p>
-												<p className="text-sm text-muted-foreground">
-													Class of {testimonial.graduationYear}
-												</p>
+						{filteredTestimonial &&
+							filteredTestimonial.map((testimonial, index) => (
+								<motion.div
+									key={testimonial.name}
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ duration: 0.5, delay: index * 0.1 }}
+								>
+									<Card className="h-full">
+										<CardContent className="p-6">
+											<div className="flex items-start gap-4">
+												<Avatar className="h-12 w-12">
+													<AvatarImage
+														src={testimonial.image}
+														alt={testimonial.name}
+													/>
+													<AvatarFallback>
+														{testimonial.name
+															.split(" ")
+															.map((n) => n[0])
+															.join("")}
+													</AvatarFallback>
+												</Avatar>
+												<div>
+													<h3 className="font-semibold">
+														{testimonial.name}
+													</h3>
+													<p className="text-sm text-muted-foreground">
+														{testimonial.achievements}
+													</p>
+													<p className="text-sm text-muted-foreground">
+														Year of visit {testimonial.graduationYear}
+													</p>
+												</div>
 											</div>
-										</div>
-										<img src={testimonial.image} />
+											<img src={testimonial.image} />
 
-										<blockquote className="mt-4 text-muted-foreground">
-											"{testimonial.content}"
-										</blockquote>
-									</CardContent>
-								</Card>
-							</motion.div>
-						))}
+											<blockquote className="mt-4 text-muted-foreground">
+												"{testimonial.position}"
+											</blockquote>
+										</CardContent>
+									</Card>
+								</motion.div>
+							))}
 					</div>
 				</div>
 			</section>
 
-			{/* Alumni Directory */}
+			{/* Testimonial Directory */}
 			<section className="py-16 bg-gray-50">
 				<div className="container">
 					<motion.div
@@ -186,7 +157,7 @@ export function AlumniNetwork() {
 						ref={ref}
 						className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 					>
-						{filteredAlumni.map((alum, index) => (
+						{filteredTestimonial.map((alum, index) => (
 							<motion.div
 								key={alum.id}
 								initial={{ opacity: 0, y: 20 }}
@@ -217,7 +188,7 @@ export function AlumniNetwork() {
 						))}
 					</div>
 
-					{filteredAlumni.length === 0 && (
+					{filteredTestimonial.length === 0 && (
 						<p className="text-center text-muted-foreground mt-8">
 							No alumni found matching your criteria.
 						</p>

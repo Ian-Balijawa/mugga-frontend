@@ -118,7 +118,7 @@ export function Programs() {
 							<TableHead>Price</TableHead>
 							<TableHead>Schedule</TableHead>
 							<TableHead>Is Active</TableHead>
-							<TableHead>Max Participants</TableHead>
+							<TableHead>Max Tourists</TableHead>
 							<TableHead>Image</TableHead>
 							<TableHead>Created At</TableHead>
 							<TableHead>Updated At</TableHead>

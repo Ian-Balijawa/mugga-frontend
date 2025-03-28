@@ -17,7 +17,7 @@ export function RegistrationSuccess() {
 				</div>
 				<h1 className="text-4xl font-bold mb-4">Registration Successful!</h1>
 				<p className="text-lg text-muted-foreground mb-8">
-					Thank you for registering with Tours Travel. We will review your application and
+					Thank you for registering withMugga Tours . We will review your application and
 					contact you soon with further details.
 				</p>
 				<div className="flex flex-col sm:flex-row gap-4 justify-center">

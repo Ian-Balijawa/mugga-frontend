@@ -5,6 +5,7 @@ import { api } from "@/services/api";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowLeft, Clock, Users, DollarSign, Tag } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { phoneNumber } from "@/components/whatsapp-chat";
 
 export function ProgramDetails() {
 	const { id } = useParams();
@@ -14,7 +15,12 @@ export function ProgramDetails() {
 		queryFn: () => api.getProgram(Number(id)),
 	});
 
-	if (isLoading) {
+	const { data: programs, isFetching } = useQuery({
+		queryKey: ["programs"],
+		queryFn: () => api.getPrograms(),
+	});
+
+	if (isLoading || isFetching) {
 		return (
 			<div className="container py-12">
 				<div className="animate-pulse">
@@ -34,6 +40,14 @@ export function ProgramDetails() {
 			</div>
 		);
 	}
+
+	console.log(programs);
+
+	const handleClick = (message: string) => {
+		const encodedMessage = encodeURIComponent(message);
+		const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+		window.open(url, "_blank");
+	};
 
 	return (
 		<div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -120,9 +134,9 @@ export function ProgramDetails() {
 										<div className="flex items-center gap-3">
 											<Users className="h-5 w-5 text-primary" />
 											<div>
-												<p className="font-medium">Max Participants</p>
+												<p className="font-medium">Max Tourists</p>
 												<p className="text-sm text-muted-foreground">
-													{program.maxParticipants} students
+													{program.maxParticipants}
 												</p>
 											</div>
 										</div>
@@ -137,10 +151,15 @@ export function ProgramDetails() {
 										</div>
 									</div>
 
-									<Button className="w-full mt-6" asChild>
-										<Link to={`/registration?program=${program.id}`}>
-											Register Now
-										</Link>
+									<Button
+										onClick={() =>
+											handleClick(
+												`Hello! I'm interested in booking the ${program.name} and learning more about Mugga tours`
+											)
+										}
+										className="w-full mt-6"
+									>
+										Book Now
 									</Button>
 								</CardContent>
 							</Card>
@@ -150,8 +169,55 @@ export function ProgramDetails() {
 					{/* Related Programs */}
 					<div className="mt-16">
 						<h2 className="text-2xl font-bold mb-6">Similar Programs</h2>
-						<div className="grid gap-8 md:grid-cols-3">
-							{/* Add related programs here */}
+						<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+							{programs &&
+								programs.map((program) => (
+									<div key={program.id}>
+										<Card className="overflow-hidden hover:shadow-lg transition-all group">
+											<div className="aspect-video relative overflow-hidden">
+												<img
+													src={program.imageUrl}
+													alt={program.name}
+													className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+												/>
+												<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+												<div className="absolute bottom-4 left-4 right-4">
+													<span className="inline-block rounded-full bg-primary-500/90 px-3 py-1 text-xs font-medium text-white">
+														{program.category}
+													</span>
+												</div>
+											</div>
+											<CardContent className="p-6">
+												<h3 className="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
+													{program.name}
+												</h3>
+												<p className="text-sm text-muted-foreground mb-4">
+													{program.description.length > 150
+														? `${program.description.substring(
+																0,
+																150
+														  )}...`
+														: program.description}
+												</p>
+												<div className="flex items-center justify-between mb-4">
+													<span className="text-sm font-medium text-muted-foreground">
+														{program.duration}
+													</span>
+													<span className="text-sm font-medium text-muted-foreground">
+														{program.price > 1
+															? `${program.price}`
+															: "Free"}
+													</span>
+												</div>
+												<Button className="w-full" variant="outline">
+													<Link to={`/programs/${program.id}`}>
+														Read More and Book a Tour
+													</Link>
+												</Button>
+											</CardContent>
+										</Card>
+									</div>
+								))}
 						</div>
 					</div>
 				</motion.div>

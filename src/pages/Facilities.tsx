@@ -34,7 +34,7 @@ export function Facilities() {
 						<div className="relative aspect-[21/9] w-full overflow-hidden rounded-lg">
 							<img
 								src={facilities[0].imageUrl}
-								alt="Travel Facility Overview"
+								alt="Travel Stay Overview"
 								className="h-full w-full object-cover"
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
@@ -159,7 +159,7 @@ const equipmentCategories = [
 	},
 	{
 		name: "Adventure Equipment",
-		items: ["Camping gear", "Snorkeling kits", "Bikes", "Hiking boots"],
+		items: ["Servicesing gear", "Snorkeling kits", "Bikes", "Hiking boots"],
 	},
 	{
 		name: "Technology",

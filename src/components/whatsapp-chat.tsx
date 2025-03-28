@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { FaWhatsapp } from "react-icons/fa";
 
 interface WhatsAppChatProps {
-	phoneNumber: string; // Format: "256701102346" (no plus sign or spaces)
 	message?: string;
 }
 
+export const phoneNumber = "250784528843";
+
 export function WhatsAppChat({
-	phoneNumber,
-	message = "Hello! I'm interested in learning more about Tours Travel.",
+	message = "Hello! I'm interested in learning more aboutMugga Tours  .",
 }: WhatsAppChatProps) {
 	const handleClick = () => {
 		const encodedMessage = encodeURIComponent(message);

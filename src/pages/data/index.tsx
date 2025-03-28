@@ -17,7 +17,7 @@ import {
 export const contactInfo = [
 	{
 		title: "Address",
-		value: "Plot 25, Kampala Road, Uganda",
+		value: "Mabirizi Complex, Kampala Rd",
 		icon: <MapPin className="h-5 w-5 text-primary-600" />,
 	},
 	{
@@ -27,7 +27,7 @@ export const contactInfo = [
 	},
 	{
 		title: "Phone",
-		value: "+256 700 123 456",
+		value: "+256704709812",
 		icon: <Phone className="h-5 w-5 text-primary-600" />,
 	},
 ];
@@ -53,7 +53,7 @@ export const features = [
 		icon: <Activity className="h-5 w-5 text-primary-600" />,
 	},
 	{
-		title: "Exotic Destinations",
+		title: "Exotic Services",
 		description:
 			"Explore breathtaking locations across the world, curated for unforgettable experiences.",
 		icon: <Globe className="h-6 w-6 text-primary-500" />,

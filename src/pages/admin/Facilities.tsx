@@ -26,7 +26,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function Facilities() {
 	const [search, setSearch] = useState("");
-	const [selectedFacility, setSelectedFacility] = useState<FacilityResponseDto | null>(null);
+	const [selectedStay, setSelectedStay] = useState<FacilityResponseDto | null>(null);
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 	const {
@@ -51,7 +51,7 @@ export function Facilities() {
 	const handleDelete = async (id: number) => {
 		try {
 			await api.deleteFacility(id);
-			toast.success("Facility deleted successfully");
+			toast.success("Stay deleted successfully");
 			refetch();
 		} catch (_error) {
 			console.error(_error);
@@ -90,19 +90,17 @@ export function Facilities() {
 				</div>
 				<Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
 					<DialogTrigger asChild>
-						<Button onClick={() => setSelectedFacility(null)}>
+						<Button onClick={() => setSelectedStay(null)}>
 							<Plus className="mr-2 h-4 w-4" />
-							New Facility
+							New Stay
 						</Button>
 					</DialogTrigger>
 					<DialogContent className="max-w-2xl">
 						<DialogHeader>
-							<DialogTitle>
-								{selectedFacility ? "Edit Facility" : "Add New Facility"}
-							</DialogTitle>
+							<DialogTitle>{selectedStay ? "Edit Stay" : "Add New Stay"}</DialogTitle>
 						</DialogHeader>
 						<FacilityForm
-							facility={selectedFacility}
+							facility={selectedStay}
 							onSuccess={() => {
 								setIsDialogOpen(false);
 								refetch();
@@ -190,7 +188,7 @@ export function Facilities() {
 											variant="ghost"
 											size="icon"
 											onClick={() => {
-												setSelectedFacility(facility);
+												setSelectedStay(facility);
 												setIsDialogOpen(true);
 											}}
 										>

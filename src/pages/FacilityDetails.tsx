@@ -31,7 +31,7 @@ export function FacilityDetails() {
 	if (!facility) {
 		return (
 			<div className="container py-12">
-				<h1 className="text-2xl font-bold">Facility not found</h1>
+				<h1 className="text-2xl font-bold">Stay not found</h1>
 			</div>
 		);
 	}

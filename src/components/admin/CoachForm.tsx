@@ -9,7 +9,7 @@ import { CoachResponseDto } from "@/types/dtos";
 import { api } from "@/services/api";
 import { useImageUpload } from "@/hooks/useImageUpload";
 
-type StaffType = "coach" | "staff" | "board" | "other";
+export type StaffType = "tour guide" | "tour operator" | "driver" | "other";
 
 interface CoachFormProps {
 	coach?: CoachResponseDto | null;
@@ -20,12 +20,12 @@ export function CoachForm({ coach, onSuccess }: CoachFormProps) {
 	const [isLoading, setIsLoading] = useState(false);
 	const { isUploading, handleImageUpload } = useImageUpload();
 	const [staffType, setStaffType] = useState<StaffType>(
-		coach?.role?.toLowerCase().includes("coach")
-			? "coach"
-			: coach?.role?.toLowerCase().includes("staff")
-			? "staff"
-			: coach?.role?.toLowerCase().includes("board")
-			? "board"
+		coach?.role?.toLowerCase().includes("tour guide")
+			? "tour guide"
+			: coach?.role?.toLowerCase().includes("tour operator")
+			? "tour operator"
+			: coach?.role?.toLowerCase().includes("driver")
+			? "driver"
 			: "other"
 	);
 	const [formData, setFormData] = useState({
@@ -53,12 +53,12 @@ export function CoachForm({ coach, onSuccess }: CoachFormProps) {
 			const data = {
 				...formData,
 				role:
-					staffType === "coach"
-						? `Coach - ${formData.role}`
-						: staffType === "staff"
-						? `Staff - ${formData.role}`
-						: staffType === "board"
-						? `Board Member - ${formData.role}`
+					staffType === "tour guide"
+						? `Tour Guide - ${formData.role}`
+						: staffType === "tour operator"
+						? `Tour operator - ${formData.role}`
+						: staffType === "driver"
+						? `Driver - ${formData.role}`
 						: formData.role,
 				specialties: formData.specialties
 					.split(",")
@@ -89,13 +89,13 @@ export function CoachForm({ coach, onSuccess }: CoachFormProps) {
 				value={formData.specialties}
 				onChange={(e) => setFormData((prev) => ({ ...prev, specialties: e.target.value }))}
 				placeholder={
-					staffType === "coach"
-						? "e.g., Youth Development, Strength Training, Tactical Analysis"
-						: staffType === "staff"
-						? "e.g., Sports Medicine, Physical Therapy, Performance Analysis"
-						: staffType === "board"
-						? "e.g., Strategic Planning, Finance, Community Relations"
-						: "Enter areas of expertise"
+					staffType === "tour guide"
+						? "e.g., Tour guid"
+						: staffType === "tour operator"
+						? "e.g., Tour operator"
+						: staffType === "driver"
+						? "e.g., Driver"
+						: "Driver"
 				}
 			/>
 		</div>
@@ -105,9 +105,9 @@ export function CoachForm({ coach, onSuccess }: CoachFormProps) {
 		<form onSubmit={handleSubmit} className="space-y-6">
 			<Tabs value={staffType} onValueChange={(value) => setStaffType(value as StaffType)}>
 				<TabsList className="grid w-full grid-cols-4">
-					<TabsTrigger value="coach">Coach</TabsTrigger>
-					<TabsTrigger value="staff">Staff</TabsTrigger>
-					<TabsTrigger value="board">Board</TabsTrigger>
+					<TabsTrigger value="tour guide">Tour guide</TabsTrigger>
+					<TabsTrigger value="tour operator">Tour operator</TabsTrigger>
+					<TabsTrigger value="driver">Driver</TabsTrigger>
 					<TabsTrigger value="other">Other</TabsTrigger>
 				</TabsList>
 
@@ -132,7 +132,7 @@ export function CoachForm({ coach, onSuccess }: CoachFormProps) {
 									setFormData((prev) => ({ ...prev, role: e.target.value }))
 								}
 								required
-								placeholder="e.g., Head Coach, Assistant Coach, Youth Coach"
+								placeholder="e.g., Wildlife tours, City tours, Cultural tours"
 							/>
 						</div>
 						{renderSpecialtiesField()}

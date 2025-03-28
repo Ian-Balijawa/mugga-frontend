@@ -11,9 +11,10 @@ const links = [
 		isLogo: true,
 	},
 	{ href: "/about", label: "About" },
-	{ href: "/programs", label: "Destinations" },
+	{ href: "/programs", label: "Services" },
 	{ href: "/coaches", label: "Staff" },
-	{ href: "/facilities", label: "Facilities" },
+	{ href: "/facilities", label: "Stays" },
+	{ href: "/alumni", label: "Testimonials" },
 	{ href: "/news", label: "News" },
 	{ href: "/gallery", label: "Gallery" },
 	{ href: "/contact", label: "Contact" },
@@ -38,7 +39,7 @@ export function MainNav() {
 				>
 					{link.isLogo ? (
 						<>
-							<img src="/images/logo.png" alt="Tours Travel" className="h-8 w-auto" />
+							<img src="/images/logo.png" alt="Mugga Tours " className="h-8 w-auto" />
 							{link.label}
 						</>
 					) : (

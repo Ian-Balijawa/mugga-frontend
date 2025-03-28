@@ -23,7 +23,7 @@ export function News() {
 	const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
 	const { data: travelUpdates = [], refetch } = useQuery({
-		queryKey: ["admin", "travel-news"],
+		queryKey: ["admin", "news"],
 		queryFn: api.getPosts,
 	});
 
@@ -51,7 +51,7 @@ export function News() {
 				>
 					{/* Featured Travel Update */}
 					{travelUpdates.length > 0 && (
-						<Link to={`/travel-news/${travelUpdates[0].id}`}>
+						<Link to={`/news/${travelUpdates[0].id}`}>
 							<div className="relative aspect-[21/9] w-full overflow-hidden rounded-lg">
 								{travelUpdates[0].videoUrl ? (
 									<VideoPlayer
@@ -101,7 +101,7 @@ export function News() {
 							</SelectTrigger>
 							<SelectContent>
 								<SelectItem value="all">All Categories</SelectItem>
-								<SelectItem value="destinations">Destinations</SelectItem>
+								<SelectItem value="destinations">Services</SelectItem>
 								<SelectItem value="tours">Tours</SelectItem>
 								<SelectItem value="events">Events</SelectItem>
 								<SelectItem value="deals">Special Deals</SelectItem>
@@ -118,7 +118,7 @@ export function News() {
 					{/* Travel Updates Grid */}
 					<div ref={ref} className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 						{filteredUpdates.slice(1).map((update, index) => (
-							<Link to={`/travel-news/${update.id}`} key={update.id}>
+							<Link to={`/news/${update.id}`} key={update.id}>
 								<motion.div
 									initial={{ opacity: 0, y: 20 }}
 									animate={inView ? { opacity: 1, y: 0 } : {}}

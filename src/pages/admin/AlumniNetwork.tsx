@@ -27,7 +27,7 @@ import { motion } from "framer-motion";
 
 export function AlumniNetwork() {
 	const [search, setSearch] = useState("");
-	const [selectedAlumni, setSelectedAlumni] = useState<AlumniResponseDto | null>(null);
+	const [selectedTestimonial, setSelectedTestimonial] = useState<AlumniResponseDto | null>(null);
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 
 	const {
@@ -43,7 +43,7 @@ export function AlumniNetwork() {
 		refetch();
 	}, [refetch]);
 
-	const filteredAlumni = alumni.filter(
+	const filteredTestimonial = alumni.filter(
 		(alum) =>
 			alum.name.toLowerCase().includes(search.toLowerCase()) ||
 			alum.currentTeam?.toLowerCase().includes(search.toLowerCase()) ||
@@ -53,7 +53,7 @@ export function AlumniNetwork() {
 	const handleDelete = async (id: number) => {
 		try {
 			await api.deleteAlumni(id);
-			toast.success("Alumni deleted successfully");
+			toast.success("Testimonial deleted successfully");
 			refetch();
 		} catch (_error) {
 			console.error(_error);
@@ -92,10 +92,9 @@ export function AlumniNetwork() {
 						transition={{ duration: 0.8 }}
 						className="max-w-3xl mx-auto text-center text-white"
 					>
-						<h1 className="text-5xl font-bold mb-6">Alumni Network</h1>
+						<h1 className="text-5xl font-bold mb-6">Testimonial Network</h1>
 						<p className="text-xl text-white/90">
-							Celebrating the success stories and achievements of our academy
-							graduates
+							Celebrating the stories and achievements of our Mugga tours visitors
 						</p>
 					</motion.div>
 				</div>
@@ -114,24 +113,26 @@ export function AlumniNetwork() {
 							/>
 						</div>
 						<div className="text-sm text-muted-foreground">
-							Total Alumni: {alumni.length}
+							Total Testimonial: {alumni.length}
 						</div>
 					</div>
 					<Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
 						<DialogTrigger asChild>
-							<Button onClick={() => setSelectedAlumni(null)}>
+							<Button onClick={() => setSelectedTestimonial(null)}>
 								<Plus className="mr-2 h-4 w-4" />
-								New Alumni
+								New Testimonial
 							</Button>
 						</DialogTrigger>
 						<DialogContent className="max-w-2xl">
 							<DialogHeader>
 								<DialogTitle>
-									{selectedAlumni ? "Edit Alumni" : "Add New Alumni"}
+									{selectedTestimonial
+										? "Edit Testimonial"
+										: "Add New Testimonial"}
 								</DialogTitle>
 							</DialogHeader>
 							<AlumniForm
-								alumni={selectedAlumni}
+								alumni={selectedTestimonial}
 								onSuccess={() => {
 									setIsDialogOpen(false);
 									refetch();
@@ -158,7 +159,7 @@ export function AlumniNetwork() {
 							</TableRow>
 						</TableHeader>
 						<TableBody>
-							{filteredAlumni.map((alumni) => (
+							{filteredTestimonial.map((alumni) => (
 								<TableRow key={alumni.id}>
 									<TableCell>
 										<img
@@ -200,7 +201,7 @@ export function AlumniNetwork() {
 												variant="ghost"
 												size="icon"
 												onClick={() => {
-													setSelectedAlumni(alumni);
+													setSelectedTestimonial(alumni);
 													setIsDialogOpen(true);
 												}}
 											>

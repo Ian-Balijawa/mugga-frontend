@@ -12,21 +12,21 @@ import { Loader2 } from "lucide-react";
 const departments = [
 	{
 		name: "Bookings",
-		email: "bookings@tourstravelug.com",
-		phone: "+256 783 012 345",
+		email: "info@mugga.com",
+		phone: "+256 704709812",
 		icon: Globe,
 	},
 	{
 		name: "Customer Support",
-		email: "support@tourstravelug.com",
-		phone: "+256 781 234 567",
+		email: "info@mugga.com",
+		phone: "+256704709812",
 		icon: Users,
 		contact: "Jane Doe",
 	},
 	{
 		name: "General Inquiries",
-		email: "info@tourstravelug.com",
-		phone: "+256 745 678 910",
+		email: "info@mugga.com",
+		phone: "+256704709812",
 		icon: Building2,
 	},
 ];
@@ -152,15 +152,14 @@ export function Contact() {
 								<CardContent className="p-0">
 									<div className="aspect-video w-full">
 										<iframe
-											// src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.991253938731!2d32.5444476!3d0.287518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbd44231d0351%3A0x73b1ca6f9c593253!2sArena%20Sports%20Academy%20Ug!5e0!3m2!1sen!2sug!4v1702397547959!5m2!1sen!2sug"
+											src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.880123529752!2d32.5759313!3d0.3153743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbde19d5fcb4d%3A0x88febbb0f69a5257!2sMabirizi%20Complex!5e0!3m2!1sen!2sug!4v1702397547959!5m2!1sen!2sug"
 											width="100%"
 											height="100%"
-											style={{ border: 0 }}
 											allowFullScreen
 											loading="lazy"
 											referrerPolicy="no-referrer-when-downgrade"
-											title="Tours Travel Location"
-										/>
+											title="Mabirizi Complex Location"
+										></iframe>
 									</div>
 								</CardContent>
 							</Card>

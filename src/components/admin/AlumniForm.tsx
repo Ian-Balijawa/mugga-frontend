@@ -48,10 +48,10 @@ export function AlumniForm({ alumni, onSuccess }: AlumniFormProps) {
 
 			if (alumni) {
 				await api.updateAlumni(alumni.id, data);
-				toast.success("Alumni updated successfully");
+				toast.success("Testimonial updated successfully");
 			} else {
 				await api.createAlumni(data);
-				toast.success("Alumni created successfully");
+				toast.success("Testimonial created successfully");
 			}
 			onSuccess();
 		} catch (error) {
@@ -149,7 +149,7 @@ export function AlumniForm({ alumni, onSuccess }: AlumniFormProps) {
 					onChange={(e) =>
 						setFormData((prev) => ({ ...prev, achievements: e.target.value }))
 					}
-					placeholder="e.g., National Team Player, League Top Scorer 2022"
+					placeholder="Achievements (comma-separated)"
 				/>
 			</div>
 
@@ -187,9 +187,9 @@ export function AlumniForm({ alumni, onSuccess }: AlumniFormProps) {
 						{isUploading ? "Uploading..." : "Saving..."}
 					</>
 				) : alumni ? (
-					"Update Alumni"
+					"Update Testimonial"
 				) : (
-					"Create Alumni"
+					"Create Testimonial"
 				)}
 			</Button>
 		</form>
