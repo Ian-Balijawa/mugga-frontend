@@ -44,7 +44,7 @@ const data = {
 					url: "/admin/gallery",
 				},
 				{
-					title: "Facilities",
+					title: "Stays",
 					url: "/admin/facilities",
 				},
 				{
