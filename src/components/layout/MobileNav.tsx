@@ -15,12 +15,13 @@ const navItems = [
 	{ href: "/about", label: "About" },
 	{ href: "/programs", label: "Services" },
 	{ href: "/coaches", label: "Staff" },
-	{ href: "/facilities", label: "Facilities" },
+	{ href: "/facilities", label: "Stays" },
+	{ href: "/alumni", label: "Testimonials" },
 	{ href: "/news", label: "News" },
 	{ href: "/gallery", label: "Gallery" },
-	{ href: "/videos", label: "Videos" },
 	{ href: "/contact", label: "Contact" },
 	{ href: "/faq", label: "FAQ" },
+	{ href: "/videos", label: "Videos" },
 ];
 
 export function MobileNav() {
