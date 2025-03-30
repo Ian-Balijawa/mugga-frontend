@@ -48,7 +48,7 @@ const data = {
 					url: "/admin/facilities",
 				},
 				{
-					title: "Alumni",
+					title: "Testimonials",
 					url: "/admin/alumni",
 				},
 			],
