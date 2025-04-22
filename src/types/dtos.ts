@@ -1,6 +1,6 @@
 export enum GalleryCategory {
 	Events = "events",
-	Facilities = "facilities",
+	Facilities = "stays",
 	Activity = "activity",
 	Competitions = "competitions",
 	Videos = "videos",

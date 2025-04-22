@@ -7,7 +7,6 @@ interface PDFViewerProps {
 	title?: string;
 	pdfUrl: string;
 }
-
 export function PDFVieweR({ title, pdfUrl }: PDFViewerProps) {
 	const [isLoading, setIsLoading] = useState(false);
 
