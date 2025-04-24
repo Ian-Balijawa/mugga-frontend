@@ -33,12 +33,7 @@ const HomePage = () => {
 	const [aboutRef, aboutInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 	const navigate = useNavigate();
 
-	const { data: registrations = [], isLoading } = useQuery({
-		queryKey: ["admin", "registrations"],
-		queryFn: api.getRegistrations,
-	});
-
-	const { data: programs = [] } = useQuery({
+	const { data: programs = [], isLoading } = useQuery({
 		queryKey: ["programs"],
 		queryFn: api.getPrograms,
 	});
@@ -190,7 +185,7 @@ const HomePage = () => {
 								{isLoading ? (
 									<div className="h-8 w-16 mx-auto bg-white/20 animate-pulse rounded" />
 								) : (
-									<p className="text-3xl font-bold">{registrations.length}+</p>
+									<p className="text-3xl font-bold">{programs.length}+</p>
 								)}
 								<p className="text-sm text-white/80">Travel Services</p>
 							</div>
